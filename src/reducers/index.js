@@ -43,7 +43,6 @@ function pets(state = {}, action = {}) {
 
 // selectors
 export const isAuthenticated = state => !!state.token;
-export const isNotAuthenticated = state => !state.token;
 // only recreate pets array when pets object changed
 export const getPets = createSelector(
   [state => state.entities.pets],
