@@ -23,8 +23,6 @@ export const ADD_PET_REQUEST = "ADD_PET_REQUEST";
 export const ADD_PET_SUCCESS = "ADD_PET_SUCCESS";
 export const ADD_PET_FAILURE = "ADD_PET_FAILURE";
 
-export const INCREMENT = "INCREMENT";
-
 // action creators
 export function login(email, password) {
   const queryString = qs.stringify({
