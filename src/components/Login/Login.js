@@ -41,6 +41,7 @@ function Login({ login }) {
                 name="email"
                 type="email"
                 label="Email"
+                autoFocus
                 component={TextInput}
               />
               <Field

@@ -44,6 +44,7 @@ function AddPet({ addPet, history }) {
               <Field
                 name="type"
                 label="Type"
+                autoFocus
                 component={TextInput}
               />
               <Field
