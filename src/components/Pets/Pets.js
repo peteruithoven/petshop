@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
+import "styled-components/macro";
+import { space, gridGap } from 'styled-system';
 import * as actions from "../../actions/index.js";
 import PetPreview from "./PetPreview/PetPreview.js";
 import { getPets } from "../../reducers/index.js";
-import { units } from "../../theme.js";
 
-const Grid = styled.div`
-  display: grid;
-  grid-gap: ${units(3)};
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  padding: ${units(3)};
-`;
+const Grid = props => (
+  <div
+    gridGap={3}
+    p={3}
+    {...props}
+    css={`
+      ${space}
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+      ${gridGap}
+    `}
+  />
+)
 
 class Pets extends Component {
   componentDidMount() {

@@ -1,9 +1,11 @@
-import styled from "styled-components";
-import { units } from "../../../theme.js";
+import React from "react";
+import { Flex } from '@rebass/grid'
 
-export default styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin: ${units(3)};
-  margin-top: 0;
-`;
+export default (props) => (
+  <Flex
+    justifyContent="flex-end"
+    mx={3}
+    mb={3}
+    {...props}
+  />
+)
