@@ -1,6 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-import { Box } from '@rebass/grid'
+import { Box } from "@rebass/grid";
 
 export default function TextInput({ type = "text", form, field, ...props }) {
   const { name } = field;

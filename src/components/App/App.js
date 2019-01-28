@@ -9,7 +9,7 @@ import AddPet from "../AddPet/AddPet.js";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 import * as reducers from "../../reducers/index.js";
 
-function App({isAuthenticated}) {
+function App({ isAuthenticated }) {
   return (
     <Router>
       <>
@@ -43,4 +43,4 @@ const PetRoute = ({ match }) => <Pet id={match.params.id} />;
 
 export default connect(state => ({
   isAuthenticated: reducers.isAuthenticated(state)
-}))(App)
+}))(App);

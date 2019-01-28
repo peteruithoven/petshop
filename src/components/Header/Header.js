@@ -16,12 +16,7 @@ const ExtendedFlex = styled(Flex)`
 `;
 
 const Toolbar = props => (
-  <ExtendedFlex
-    px={3}
-    alignItems={"center"}
-    minHeight={5}
-    {...props}
-  />
+  <ExtendedFlex px={3} alignItems={"center"} minHeight={5} {...props} />
 );
 
 function Header({ isAuthenticated, logout }) {

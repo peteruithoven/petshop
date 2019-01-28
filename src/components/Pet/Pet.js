@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router";
-import { Box } from '@rebass/grid';
+import { Box } from "@rebass/grid";
 import * as actions from "../../actions/index.js";
 
 class Pet extends Component {
@@ -22,8 +22,10 @@ class Pet extends Component {
     const { type, name, price } = pet;
     return (
       <Box p={3}>
-        <Typography variant="h2" paragraph>{name}</Typography>
-        <Typography  paragraph>
+        <Typography variant="h2" paragraph>
+          {name}
+        </Typography>
+        <Typography paragraph>
           Type: <em>{type}</em>
         </Typography>
         <Typography paragraph>

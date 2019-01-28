@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
-import Space from 'styled-space'
+import Space from "styled-space";
 
 export default function PetPreview({ name, price, type, id }) {
   return (

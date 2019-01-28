@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "styled-components/macro";
-import { space, gridGap } from 'styled-system';
+import { space, gridGap } from "styled-system";
 import * as actions from "../../actions/index.js";
 import PetPreview from "./PetPreview/PetPreview.js";
 import { getPets } from "../../reducers/index.js";
@@ -18,7 +18,7 @@ const Grid = props => (
       ${gridGap}
     `}
   />
-)
+);
 
 class Pets extends Component {
   componentDidMount() {
