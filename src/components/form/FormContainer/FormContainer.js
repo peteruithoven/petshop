@@ -6,10 +6,7 @@ import Space from 'styled-space'
 
 export default function FormContainer({ title, children }) {
   return (
-    <Flex
-      justifyContent="center"
-      p={3}
-    >
+    <Flex justifyContent={["flex-start", "center"]} p={3}>
       <Paper>
         <Space m={3} mb={2}>
           <Typography variant="h2">{title}</Typography>

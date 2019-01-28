@@ -8,11 +8,12 @@ export default createMuiTheme({
   },
   palette: {
     primary: orange,
-    secondary: red,
+    secondary: red
   },
   shape: {
     borderRadius: 6
   },
   space: [0, 4, 8, 24, 32, 64, 128, 256, 512],
-  minHeights: [0, 4, 8, 24, 32, 64, 128, 256, 512]
+  minHeights: [0, 4, 8, 24, 32, 64, 128, 256, 512],
+  breakpoints: ["20em"]
 });
