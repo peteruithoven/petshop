@@ -13,5 +13,6 @@ export default createMuiTheme({
   shape: {
     borderRadius: 6
   },
-  space: [0, 4, 8, 24, 32, 64, 128, 256, 512]
+  space: [0, 4, 8, 24, 32, 64, 128, 256, 512],
+  minHeights: [0, 4, 8, 24, 32, 64, 128, 256, 512]
 });
