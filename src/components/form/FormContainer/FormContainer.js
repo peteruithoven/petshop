@@ -13,10 +13,7 @@ const Container = styled.div`
 const Title = styled(Typography).attrs({
   variant: "h2"
 })`
-  margin: ${props => {
-    const { unit } = props.theme.spacing;
-    return `${unit * 3}px ${unit*3}px ${unit}px ${unit * 3}px`;
-  }};
+  margin: ${units(3)} ${units(3)} ${units(1)} ${units(3)}
 `;
 
 export default function FormContainer({ title, children }) {
