@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import actionWrapper from "redux-action-wrapper";
 import configureStore from "./store/configureStore.js";
-import ThemeProviders from './components/ThemeProviders/ThemeProviders.js'
+import ThemeProviders from "./components/ThemeProviders/ThemeProviders.js";
 import App from "./components/App/App.js";
 import GlobalStyle from "./components/GlobalStyle/GlobalStyle.js";
 import * as actions from "./actions/index.js";
