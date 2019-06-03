@@ -1,34 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Card from "@material-ui/core/Card";
-import Typography from "@material-ui/core/Typography";
-import styled from "styled-components";
-import { units } from "../../../theme.js";
-
-const Title = styled(Typography).attrs({
-  variant: "h4"
-})`
-  margin: ${units(0.5)} ${units(1)} ${units(1)} ${units(1)};
-`;
-
-const Type = styled.p`
-  margin: 0 ${units(1)} ${units(1)} ${units(1)};
-`;
-
-const Price = styled.p`
-  text-align: right;
-  margin: ${units(1)};
-  margin-top: 0;
-`;
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card, Typography, Box } from '@material-ui/core';
 
 export default function PetPreview({ name, price, type, id }) {
   return (
     <Card>
-      <Title>
-        <Link to={`/${id}`}>{name}</Link>
-      </Title>
-      <Type>{type}</Type>
-      <Price>€ {price}</Price>
+      <Box m={2} mt={1}>
+        <Typography variant="h4">
+          <Link to={`/${id}`}>{name}</Link>
+        </Typography>
+      </Box>
+      <Box m={2} mt={0}>
+        <Typography>{type}</Typography>
+      </Box>
+      <Box m={2} mt={0}>
+        <Typography align="right">€ {price}</Typography>
+      </Box>
     </Card>
   );
 }

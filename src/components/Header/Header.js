@@ -1,40 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Button from "@material-ui/core/Button";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import styled from "styled-components";
+import {
+  Button,
+  AppBar,
+  Toolbar,
+  Typography,
+  Box
+ } from "@material-ui/core";
 import * as actions from "../../actions/index.js";
 import * as reducers from "../../reducers/index.js";
-import { units } from "../../theme.js";
-
-const Title = styled(Typography).attrs({
-  variant: "h6"
-})`
-  flex-grow: 1;
-`;
-
-const StyledButton = styled(Button)`
-  margin-left: ${units(1)};
-`;
 
 function Header({ isAuthenticated, logout }) {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Title component={Link} to="/">
-          Pets Shop
-        </Title>
+        <Box flexGrow={1}>
+          <Typography  variant="h6" component={Link} to="/">
+            Pets Shop
+          </Typography>
+        </Box>
         {isAuthenticated && (
           <>
-            <StyledButton component={Link} to="/add">
+            <Button ml={1} component={Link} to="/add">
               Add pet
-            </StyledButton>
-            <StyledButton onClick={logout}>
+            </Button>
+            <Button ml={1} onClick={logout}>
               Logout
-            </StyledButton>
+            </Button>
           </>
         )}
       </Toolbar>

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import * as actions from "../../actions/index.js";
-import PetPreview from "./PetPreview/PetPreview.js";
-import { getPets } from "../../reducers/index.js";
-import { units } from "../../theme.js";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import * as actions from '../../actions/index.js';
+import PetPreview from './PetPreview/PetPreview.js';
+import { getPets } from '../../reducers/index.js';
+import { units } from '../../theme.js';
 
 const Grid = styled.div`
   display: grid;
@@ -31,9 +31,9 @@ class Pets extends Component {
 
 export default connect(
   state => ({
-    pets: getPets(state)
+    pets: getPets(state),
   }),
   {
-    loadPets: actions.loadPets
+    loadPets: actions.loadPets,
   }
 )(Pets);

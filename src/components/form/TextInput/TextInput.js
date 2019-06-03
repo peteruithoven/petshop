@@ -1,18 +1,12 @@
-import React from "react";
-import TextField from "@material-ui/core/TextField";
-import styled from "styled-components";
-import { units } from "../../../theme.js";
+import React from 'react';
+import { TextField, Box } from '@material-ui/core';
 
-const Container = styled.div`
-  margin: 0 ${units(3)} ${units(1)} ${units(3)};
-`;
-
-export default function TextInput({ type = "text", form, field, ...props }) {
+export default function TextInput({ type = 'text', form, field, ...props }) {
   const { name } = field;
   const error = form.errors[name];
   const touched = form.touched[name];
   return (
-    <Container>
+    <Box mx={3} mb={2}>
       <TextField
         id={name}
         type={type}
@@ -21,6 +15,6 @@ export default function TextInput({ type = "text", form, field, ...props }) {
         {...field}
         {...props}
       />
-    </Container>
+    </Box>
   );
 }

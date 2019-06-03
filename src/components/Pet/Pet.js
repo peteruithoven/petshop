@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Button, Typography, Box } from "@material-ui/core";
 import { withRouter } from "react-router";
-import styled from "styled-components";
 import * as actions from "../../actions/index.js";
-import { units } from "../../theme.js";
-
-const Page = styled.div`
-  padding: ${units(3)};
-`;
 
 class Pet extends Component {
   componentDidMount() {
@@ -26,18 +19,18 @@ class Pet extends Component {
     if (!pet) return null;
     const { type, name, price } = pet;
     return (
-      <Page>
-        <Typography variant="h2">{name}</Typography>
-        <p>
+      <Box p={3}>
+        <Typography variant="h2" paragraph>{name}</Typography>
+        <Typography paragraph>
           Type: <em>{type}</em>
-        </p>
-        <p>
+        </Typography>
+        <Typography paragraph>
           Price: <em>€ {price}</em>
-        </p>
+        </Typography>
         <Button color="secondary" variant="contained" onClick={this.deletePet}>
           Delete
         </Button>
-      </Page>
+      </Box>
     );
   }
 }
