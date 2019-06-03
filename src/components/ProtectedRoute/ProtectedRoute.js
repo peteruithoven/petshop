@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
-import renderProps from "render-props";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import renderProps from 'render-props';
 
 /* ProtectedRoute
  * Inspired by:
@@ -46,10 +46,10 @@ ProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   render: PropTypes.func,
-  useFrom: PropTypes.bool
+  useFrom: PropTypes.bool,
 };
 ProtectedRoute.defaultProps = {
   predicate: false,
-  redirectTo: "/",
-  useFrom: false
+  redirectTo: '/',
+  useFrom: false,
 };
