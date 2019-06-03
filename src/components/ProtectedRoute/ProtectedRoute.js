@@ -44,7 +44,7 @@ ProtectedRoute.propTypes = {
   predicate: PropTypes.bool,
   redirectTo: PropTypes.string,
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  childen: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   render: PropTypes.func,
   useFrom: PropTypes.bool
 };
