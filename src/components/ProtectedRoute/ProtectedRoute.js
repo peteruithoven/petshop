@@ -26,15 +26,12 @@ export default function ProtectedRoute({
           else return renderProps(component || children || render, props);
         } else {
           const { state } = props.history.location;
-          const fromPathname = state && state.from && state.from.pathname;
-          return (
-            <Redirect
-              to={{
-                pathname: useFrom ? fromPathname || redirectTo : redirectTo,
-                state: { from: props.location }
-              }}
-            />
-          );
+          const newLocation = {
+            pathname: redirectTo,
+            ...(useFrom && state && state.from),
+            state: { from: props.location },
+          };
+          return <Redirect to={newLocation} />;
         }
       }}
     />
