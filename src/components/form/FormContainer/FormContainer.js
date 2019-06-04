@@ -4,7 +4,7 @@ import { Typography, Box } from '@material-ui/core';
 
 export default function FormContainer({ title, children }) {
   return (
-    <Box display="flex" justifyContent={['flex-start', 'center']}>
+    <Box display="flex" justifyContent="center">
       <Paper>
         <Box mx={3} mt={3}>
           <Typography variant="h2" paragraph>
