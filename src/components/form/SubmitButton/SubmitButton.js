@@ -1,7 +1,7 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
+import React from 'react';
+import Button from '@material-ui/core/Button';
 
-export default function SubmitButton({ errors, dirty, isSubmitting }) {
+export default ({ errors, dirty, isSubmitting }) => {
   const numErrors = Object.keys(errors).length;
   const isSubmittable = numErrors === 0 && dirty && !isSubmitting;
   return (
@@ -14,4 +14,4 @@ export default function SubmitButton({ errors, dirty, isSubmitting }) {
       Submit
     </Button>
   );
-}
+};

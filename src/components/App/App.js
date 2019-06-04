@@ -10,39 +10,37 @@ import AddPet from '../AddPet/AddPet.js';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js';
 import * as reducers from '../../reducers/index.js';
 
-function App({ isAuthenticated }) {
-  return (
-    <Router>
-      <>
-        <Header />
-        <Box pt={[2, 3]} clone>
-          <Container maxWidth="md">
-            <Switch>
-              <ProtectedRoute
-                path="/login"
-                component={Login}
-                predicate={!isAuthenticated}
-                redirectTo="/"
-                useFrom
-              />
-              <ProtectedRoute
-                path="/"
-                predicate={isAuthenticated}
-                redirectTo="/login"
-              >
-                <Switch>
-                  <Route path="/" exact component={Pets} />
-                  <Route path="/add" component={AddPet} />
-                  <Route path="/:id" component={PetRoute} />
-                </Switch>
-              </ProtectedRoute>
-            </Switch>
-          </Container>
-        </Box>
-      </>
-    </Router>
-  );
-}
+const App = ({ isAuthenticated }) => (
+  <Router>
+    <>
+      <Header />
+      <Box pt={[2, 3]} clone>
+        <Container maxWidth="md">
+          <Switch>
+            <ProtectedRoute
+              path="/login"
+              component={Login}
+              predicate={!isAuthenticated}
+              redirectTo="/"
+              useFrom
+            />
+            <ProtectedRoute
+              path="/"
+              predicate={isAuthenticated}
+              redirectTo="/login"
+            >
+              <Switch>
+                <Route path="/" exact component={Pets} />
+                <Route path="/add" component={AddPet} />
+                <Route path="/:id" component={PetRoute} />
+              </Switch>
+            </ProtectedRoute>
+          </Switch>
+        </Container>
+      </Box>
+    </>
+  </Router>
+);
 
 const PetRoute = ({ match }) => <Pet id={match.params.id} />;
 

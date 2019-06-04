@@ -12,31 +12,29 @@ import {
 import * as actions from '../../actions/index.js';
 import * as reducers from '../../reducers/index.js';
 
-function Header({ isAuthenticated, logout }) {
-  return (
-    <AppBar position="static">
-      <Toolbar>
-        <Box flexGrow={1} clone>
-          <Typography variant="h6">
-            <Link component={RouterLink} color="inherit" to="/">
-              Pets Shop
-            </Link>
-          </Typography>
-        </Box>
-        {isAuthenticated && (
-          <>
-            <Button component={RouterLink} color="inherit" to="/add">
-              Add pet
-            </Button>
-            <Button onClick={logout} color="inherit">
-              Logout
-            </Button>
-          </>
-        )}
-      </Toolbar>
-    </AppBar>
-  );
-}
+const Header = ({ isAuthenticated, logout }) => (
+  <AppBar position="static">
+    <Toolbar>
+      <Box flexGrow={1} clone>
+        <Typography variant="h6">
+          <Link component={RouterLink} color="inherit" to="/">
+            Pets Shop
+          </Link>
+        </Typography>
+      </Box>
+      {isAuthenticated && (
+        <>
+          <Button component={RouterLink} color="inherit" to="/add">
+            Add pet
+          </Button>
+          <Button onClick={logout} color="inherit">
+            Logout
+          </Button>
+        </>
+      )}
+    </Toolbar>
+  </AppBar>
+);
 
 export default connect(
   state => ({
