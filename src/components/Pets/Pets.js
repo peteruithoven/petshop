@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import * as actions from '../../actions/index.js';
 import PetPreview from './PetPreview/PetPreview.js';
 import { getPets } from '../../reducers/index.js';
-import { units } from '../../theme.js';
+import { styled } from '@material-ui/styles';
 
-const Grid = styled.div`
-  display: grid;
-  grid-gap: ${units(3)};
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  padding: ${units(3)};
-`;
+const Grid = styled('div')(({ theme }) => {
+  return {
+    display: 'grid',
+    gridGap: theme.spacing(3),
+    gridTemplateColumns: 'repeat(auto-fill, minmax(13rem, 1fr))',
+    padding: theme.spacing(3, 0),
+  };
+});
 
-class Pets extends Component {
-  componentDidMount() {
-    this.props.loadPets();
-  }
-  render() {
-    const { pets } = this.props;
-    return (
-      <Grid>
-        {pets.map(pet => (
-          <PetPreview key={pet.id} {...pet} />
-        ))}
-      </Grid>
-    );
-  }
-}
+const Pets = ({ loadPets, pets }) => {
+  useEffect(() => {
+    loadPets();
+  }, [loadPets]);
+  return (
+    <Grid>
+      {pets.map(pet => (
+        <PetPreview key={pet.id} {...pet} />
+      ))}
+    </Grid>
+  );
+};
 
 export default connect(
   state => ({
