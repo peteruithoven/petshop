@@ -1,23 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import {
+  Link,
   Button,
   AppBar,
   Toolbar,
   Typography,
-  Box
- } from "@material-ui/core";
-import * as actions from "../../actions/index.js";
-import * as reducers from "../../reducers/index.js";
+  Box,
+} from '@material-ui/core';
+import * as actions from '../../actions/index.js';
+import * as reducers from '../../reducers/index.js';
 
 function Header({ isAuthenticated, logout }) {
   return (
     <AppBar position="static">
       <Toolbar>
         <Box flexGrow={1}>
-          <Typography  variant="h6" component={Link} to="/">
-            Pets Shop
+          <Typography variant="h6">
+            <Link component={RouterLink} color="inherit" to="/">
+              Pets Shop
+            </Link>
           </Typography>
         </Box>
         {isAuthenticated && (
@@ -37,9 +40,9 @@ function Header({ isAuthenticated, logout }) {
 
 export default connect(
   state => ({
-    isAuthenticated: reducers.isAuthenticated(state)
+    isAuthenticated: reducers.isAuthenticated(state),
   }),
   {
-    logout: actions.logout
+    logout: actions.logout,
   }
 )(Header);

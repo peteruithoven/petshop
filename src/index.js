@@ -6,7 +6,6 @@ import actionWrapper from 'redux-action-wrapper';
 import configureStore from './store/configureStore.js';
 import ThemeProviders from './components/ThemeProviders/ThemeProviders.js';
 import App from './components/App/App.js';
-import GlobalStyle from './components/GlobalStyle/GlobalStyle.js';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import * as actions from './actions/index.js';
 
@@ -16,7 +15,6 @@ ReactDOM.render(
   <Provider store={store}>
     <ThemeProviders>
       <>
-        <GlobalStyle />
         <CssBaseline />
         <App />
       </>
