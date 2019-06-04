@@ -16,7 +16,7 @@ function Header({ isAuthenticated, logout }) {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Box flexGrow={1}>
+        <Box flexGrow={1} clone>
           <Typography variant="h6">
             <Link component={RouterLink} color="inherit" to="/">
               Pets Shop

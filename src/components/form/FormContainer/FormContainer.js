@@ -10,8 +10,8 @@ export default function FormContainer({ title, children }) {
           <Typography variant="h2" paragraph>
             {title}
           </Typography>
+          {children}
         </Box>
-        {children}
       </Paper>
     </Box>
   );

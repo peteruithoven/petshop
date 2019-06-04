@@ -6,7 +6,7 @@ export default function TextInput({ type = 'text', form, field, ...props }) {
   const error = form.errors[name];
   const touched = form.touched[name];
   return (
-    <Box mx={3} mb={2}>
+    <Box mb={2}>
       <TextField
         id={name}
         type={type}
