@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Typography, Box } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { withRouter } from 'react-router';
 import * as actions from '../../actions/index.js';
 
