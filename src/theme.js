@@ -1,10 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { red, orange } from '@material-ui/core/colors';
+import { green } from '@material-ui/core/colors';
 
 export default createMuiTheme({
   palette: {
-    primary: orange,
-    secondary: red,
+    primary: green,
+    contrastThreshold: 2,
   },
   shape: {
     borderRadius: 6,
