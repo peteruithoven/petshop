@@ -4,20 +4,16 @@ import { Card, Typography, Box, Link } from '@material-ui/core';
 
 export default function PetPreview({ name, price, type, id }) {
   return (
-    <Card>
-      <Box m={2} mt={1}>
+    <Box px={2} py={1.5} clone>
+      <Card>
         <Typography variant="h4">
           <Link component={RouterLink} to={`/${id}`}>
             {name}
           </Link>
         </Typography>
-      </Box>
-      <Box m={2} mt={0}>
         <Typography>{type}</Typography>
-      </Box>
-      <Box m={2} mt={0}>
         <Typography align="right">€ {price}</Typography>
-      </Box>
-    </Card>
+      </Card>
+    </Box>
   );
 }

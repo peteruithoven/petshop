@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container } from '@material-ui/core';
+import { Container, Box } from '@material-ui/core';
 import Header from '../Header/Header.js';
 import Login from '../Login/Login.js';
 import Pets from '../Pets/Pets.js';
@@ -15,28 +15,30 @@ function App({ isAuthenticated }) {
     <Router>
       <>
         <Header />
-        <Container maxWidth="md">
-          <Switch>
-            <ProtectedRoute
-              path="/login"
-              component={Login}
-              predicate={!isAuthenticated}
-              redirectTo="/"
-              useFrom
-            />
-            <ProtectedRoute
-              path="/"
-              predicate={isAuthenticated}
-              redirectTo="/login"
-            >
-              <Switch>
-                <Route path="/" exact component={Pets} />
-                <Route path="/add" component={AddPet} />
-                <Route path="/:id" component={PetRoute} />
-              </Switch>
-            </ProtectedRoute>
-          </Switch>
-        </Container>
+        <Box pt={[2, 3]} clone>
+          <Container maxWidth="md">
+            <Switch>
+              <ProtectedRoute
+                path="/login"
+                component={Login}
+                predicate={!isAuthenticated}
+                redirectTo="/"
+                useFrom
+              />
+              <ProtectedRoute
+                path="/"
+                predicate={isAuthenticated}
+                redirectTo="/login"
+              >
+                <Switch>
+                  <Route path="/" exact component={Pets} />
+                  <Route path="/add" component={AddPet} />
+                  <Route path="/:id" component={PetRoute} />
+                </Switch>
+              </ProtectedRoute>
+            </Switch>
+          </Container>
+        </Box>
       </>
     </Router>
   );

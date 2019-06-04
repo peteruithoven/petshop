@@ -25,12 +25,10 @@ function Header({ isAuthenticated, logout }) {
         </Box>
         {isAuthenticated && (
           <>
-            <Button ml={1} component={Link} to="/add">
+            <Button component={RouterLink} to="/add">
               Add pet
             </Button>
-            <Button ml={1} onClick={logout}>
-              Logout
-            </Button>
+            <Button onClick={logout}>Logout</Button>
           </>
         )}
       </Toolbar>

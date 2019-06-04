@@ -5,14 +5,11 @@ import PetPreview from './PetPreview/PetPreview.js';
 import { getPets } from '../../reducers/index.js';
 import { styled } from '@material-ui/styles';
 
-const Grid = styled('div')(({ theme }) => {
-  return {
-    display: 'grid',
-    gridGap: theme.spacing(3),
-    gridTemplateColumns: 'repeat(auto-fill, minmax(13rem, 1fr))',
-    padding: theme.spacing(3, 0),
-  };
-});
+const Grid = styled('div')(({ theme }) => ({
+  display: 'grid',
+  gridGap: theme.spacing(3),
+  gridTemplateColumns: 'repeat(auto-fill, minmax(13rem, 1fr))',
+}));
 
 const Pets = ({ loadPets, pets }) => {
   useEffect(() => {
