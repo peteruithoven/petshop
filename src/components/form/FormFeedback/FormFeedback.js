@@ -1,7 +1,4 @@
-import styled from "styled-components";
-import { units } from "../../../theme.js";
+import React from 'react';
+import { Typography } from '@material-ui/core';
 
-export default styled.div`
-  color: ${props => props.theme.palette.error.main};
-  margin: 0 ${units(3)} ${units(1)} ${units(3)}
-`;
+export default props => <Typography color="error" paragraph {...props} />;
